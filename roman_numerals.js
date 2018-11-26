@@ -1,5 +1,23 @@
-function to_roman (num) {
+function to_roman(num) {
   // your implementation code here
+
+  const arabicNumeral = [1000, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
+  const romanNumeral = ['M', 'D', 'CD', 'C', 'LC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I'];
+  let result = '';
+
+  if (num === 0 || num > 3000) return 'Input must be in the range of 1 - 3000'
+
+  for (let i = 0; i < arabicNumeral.length; i++) {
+    if (num >= arabicNumeral[i]) {
+      result += romanNumeral[i]
+
+      num -= arabicNumeral[i]
+      i--
+    }
+  }
+
+  return result
+
 }
 
 // Drive code
