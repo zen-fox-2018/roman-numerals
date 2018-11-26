@@ -1,5 +1,19 @@
 function to_roman (num) {
   // your implementation code here
+  var Roman=['M','DM','D','CD','C','LC','L','XL','X','IX','V','IV','I']
+  var Num=[1000,900,500,400,100,90,50,40,10,9,5,4,1]
+  var output=''
+  while(num!=0){
+    for(var i=0;i<Roman.length;i++){
+      
+      if(num >= Num[i]){
+        num -= Num[i]
+        output+=Roman[i]
+        break
+      }
+    }
+  }
+  return output
 }
 
 // Drive code
