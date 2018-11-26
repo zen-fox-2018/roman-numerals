@@ -13,19 +13,15 @@ function to_roman (num) {
     V:5,
     IV:4,
     I:1
-}
-let result = ''
-
-    for( i in Roman){
-        // console.log(Roman[i])
-        while( num >= Roman[i]){
-            num -= Roman[i]
-            result+= i
-        }
+  }
+  let result = ''
+  for ( i in Roman) {
+    while ( num >= Roman[i]) {
+        num -= Roman[i]
+        result+= i
     }
-
-return result
-  // your implementation code here
+  }
+  return result
 }
 
 // Drive code
@@ -36,4 +32,4 @@ console.log('4     | IV       | ', to_roman(4))
 console.log('9     | IX       | ', to_roman(9))
 console.log('13    | XIII     | ', to_roman(13))
 console.log('1453  | MCDLIII  | ', to_roman(1453))
-console.log('1646  | MDCXLVI  | ', to_roman(1646))
+console.log('1646  | MDCXLVI  | ', to_roman(3213))
