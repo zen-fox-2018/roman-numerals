@@ -1,5 +1,19 @@
-function to_roman (num) {
-  // your implementation code here
+function to_roman(num) {
+  numString = String(num)
+
+  arabicArray = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
+  romanArray = ['M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I']
+
+  var resultAwal = []
+
+  for (var i = 0; i < romanArray.length; i++) {
+    while (num >= arabicArray[i]) {
+      resultAwal.push(romanArray[i])
+      num = num - arabicArray[i]
+    }
+  }
+
+  return resultAwal.join('')
 }
 
 // Drive code
