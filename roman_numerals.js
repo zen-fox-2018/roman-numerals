@@ -1,28 +1,35 @@
-const roman = ['I', 'IV', 'V', 'IX', 'X', 'XL', 'L', 'XC', 'C', 'CD', 'D', 'CM', 'M']
-const number = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1000]
+// const roman = ['I', 'IV', 'V', 'IX', 'X', 'XL', 'L', 'XC', 'C', 'CD', 'D', 'CM', 'M']
+// const number = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1000]
+
+// function to_roman (num) {
+//     let result = ''
+//     let i = number.length - 1
+//     while (num) {
+//         if (num - number[i] >= 0) {
+//             result += roman[i]
+//             num -= number[i]
+//         } else {
+//             i--
+//         }
+//     }
+//     return result
+// }
+
+// pake .findIndex
+const roman = ['M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I',]
+const number = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
 
 function to_roman (num) {
     let result = ''
-    let i = number.length - 1
     while (num) {
-        if (num - number[i] >= 0) {
-            result += roman[i]
-            num -= number[i]
-        } else {
-            i--
-        }
+        let index = number.findIndex((val) => {
+            return val <= num
+        })
+        result += roman[index]
+        num -= number[index]
     }
     return result
 }
-
-// // pake .findIndex
-// function to_roman (num) {
-//     console.log(roman.findIndex(findNumber(num)));
-    
-//     // while (num) {
-//     // }
-// }
-
 
 // Drive code
 console.log('My totally sweet testing script for new roman\n')
