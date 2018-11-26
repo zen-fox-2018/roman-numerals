@@ -4,13 +4,11 @@ function to_roman (num) {
   var romawi = ['I', 'IV', 'V', 'IX', 'X', 'XL', 'L', 'XC', 'C', 'CD', 'D', 'CM', 'M'];
 
   var result = '';
-  while(num != 0){
-    for(var i = nomor.length - 1; i>=0; i--){
-      if(num >= nomor[i]){
-        result += romawi[i];
-        num -= nomor[i];
-        i++;
-      }
+  for(var i = nomor.length - 1; i >= 0; i--) {
+    if(num >= nomor[i]) {
+      result += romawi[i];
+      num -= nomor[i];
+      i++;
     }
   }
   return result;
