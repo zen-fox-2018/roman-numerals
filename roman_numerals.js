@@ -1,5 +1,19 @@
 function to_roman (num) {
   // your implementation code here
+  var nomor = [1, 4, 5, 9, 10, 40 , 50, 90, 100, 400, 500, 900, 1000];
+  var romawi = ['I', 'IV', 'V', 'IX', 'X', 'XL', 'L', 'XC', 'C', 'CD', 'D', 'CM', 'M'];
+
+  var result = '';
+  while(num != 0){
+    for(var i = nomor.length - 1; i>=0; i--){
+      if(num >= nomor[i]){
+        result += romawi[i];
+        num -= nomor[i];
+        i++;
+      }
+    }
+  }
+  return result;
 }
 
 // Drive code
